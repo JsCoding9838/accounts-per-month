@@ -1,13 +1,25 @@
-.section-title{
-    margin: 30px 0;
-    color: #31A5AC;
+.calculate-btn {
+    background-color: #198754;
+    padding: 7px 43px;
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    border-style: none;
 }
-/* .custom-container{
-    min-height: 100vh;
-} */
-
-/* img{
-    height: 100%;
-    width: 100%;
-} */
-
+.save-btn {
+    background-color: #198754;
+    padding: 7px 43px;
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    border-style: none;
+}
+.save-input {
+    width: 127px;
+    height: 45px;
+    margin-left: 6px;
+}
+img{
+    min-height: 100%;
+    min-width: 100%;
+}
