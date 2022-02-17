@@ -5,6 +5,10 @@
     font-weight: bold;
     color: white;
     border-style: none;
+    transition: 2s;
+}
+.calculate-btn:hover{
+    background-color: #74c69f;
 }
 .save-btn {
     background-color: #198754;
@@ -13,6 +17,10 @@
     font-weight: bold;
     color: white;
     border-style: none;
+    transition: 2s;
+}
+.save-btn:hover{
+    background-color: #74c69f;
 }
 .save-input {
     width: 127px;
