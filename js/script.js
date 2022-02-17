@@ -1,6 +1,3 @@
-const totalIncome = document.getElementById('income-total').value;
-
-
 function getInputValue(inputId){
     // debugger;
     const inputField      = document.getElementById(inputId);
@@ -23,77 +20,62 @@ document.getElementById('claculate-btn').addEventListener('click', function(){
     let clothesTotal  = getInputValue('clothes-total');
     let expensesTotal = foodTotal + rentTotal + clothesTotal;
     let balance       = totalIncome - expensesTotal;
-    // console.log(balance);
 
     let totalElement         = document.getElementById('total-expenses');
     totalElement.innerText   = expensesTotal;
 
     let currentBalance       = document.getElementById('total-balance');
     currentBalance.innerText = balance;
-    
+    // empty or - value of alert message of Income
+    if(totalIncome > 0){
 
-    // console.log(balance);
-    
-    // if(totalIncome > 0){
-    //     let totalElement         = document.getElementById('total-expenses');
-    //     totalElement.innerText   = expensesTotal;
-
-    //     let currentBalance       = document.getElementById('total-balance');
-    //     currentBalance.innerText = balance;
-    // }
-    // else{
-    //     return alert('Please input valid food Amount of Money in number format');
-    // }
+    }
+    else{
+        return alert('Please input valid your "Income" Money in number format');
+    }
+    // empty or - value of alert message of food
     if(foodTotal > 0){
+
     }
     else{
         return alert('Please input valid food Amount of Money in number format');
     }
+    // empty or - value of alert message of rent
     if(rentTotal > 0){
     }
     else{
         return alert('Please input valid Rent Amount of Money in number format');
     }
+    // empty or - value of alert message  of clothes
     if(clothesTotal > 0){
     }
     else{
         return alert('Please input valid Clothes Amount of Money in number format');
     }
+
 })
 
-const saveButton = document.getElementById('save-balc-btn').addEventListener('click', function (){
+const saveButton = document.getElementById('save-balance-button').addEventListener('click', function (){
 
     let previusIncomeBalance = document.getElementById('total-balance').innerText;
-    let previusCurrentBalance = parseFloat(previusIncomeBalance);
-    console.log('previus cu:',previusCurrentBalance);
-
+    let totalIcomeBalance = parseFloat(previusIncomeBalance);
+    
 
     // Save Balance Field
-    let saveprevius       = document.getElementById('save-balc-field').value;
-    let savePreviusTotal  = parseInt(saveprevius);
-    let totalSavingAmount = previusCurrentBalance * savePreviusTotal;
-    let currentSavingAmount = totalSavingAmount / 100;
+    let getSavingBalanceText = getInputValue('save-balance-field');
+    let totalSavingAmount    = totalIcomeBalance * getSavingBalanceText;
+    let currentSavingAmount  = totalSavingAmount / 100;
 
-    console.log('save balance:', currentSavingAmount);
-
-
-    //saving amount 
-    let  savingAmountField2 = document.getElementById('saving-amount');
-    savingAmountField2.innerText = currentSavingAmount;
-
-    //--
     
+
+    // //saving amount 
+    let  updateSavingAmount      = document.getElementById('saving-amount');
+    updateSavingAmount.innerText = currentSavingAmount;
 
 
     // Remaining Balance
-    let remaining = document.getElementById('remaining-balance');
+    let updateRemaining = document.getElementById('remaining-balance');
 
-    remaining.innerText = previusCurrentBalance - currentSavingAmount;
+    updateRemaining.innerText = totalIcomeBalance - currentSavingAmount;
 
-    console.log(remaining);
-
-    
-
-
-   
 });
