@@ -5,27 +5,27 @@ function getInputValue(inputId){
     const amountValue     = parseFloat(inputAmountText);
 
     // clear input field
-    inputField.value = '';
+    // inputField.value = '';
 
     return amountValue;
 }
 
-
-
 document.getElementById('claculate-btn').addEventListener('click', function(){
 
-    let totalIncome   = getInputValue('income-total');
-    let foodTotal     = getInputValue('food-total');
-    let rentTotal     = getInputValue('rent-total');
-    let clothesTotal  = getInputValue('clothes-total');
-    let expensesTotal = foodTotal + rentTotal + clothesTotal;
-    let balance       = totalIncome - expensesTotal;
+    const totalIncome   = getInputValue('income-total');
+    const foodTotal     = getInputValue('food-total');
+    const rentTotal     = getInputValue('rent-total');
+    const clothesTotal  = getInputValue('clothes-total');
+    const expensesTotal = foodTotal + rentTotal + clothesTotal;
+    const balance       = totalIncome - expensesTotal;
 
-    let totalElement         = document.getElementById('total-expenses');
+    const totalElement       = document.getElementById('total-expenses');
     totalElement.innerText   = expensesTotal;
 
-    let currentBalance       = document.getElementById('total-balance');
+    const currentBalance     = document.getElementById('total-balance');
     currentBalance.innerText = balance;
+
+
     // empty or - value of alert message of Income
     if(totalIncome > 0){
 
@@ -57,25 +57,23 @@ document.getElementById('claculate-btn').addEventListener('click', function(){
 
 const saveButton = document.getElementById('save-balance-button').addEventListener('click', function (){
 
-    let previusIncomeBalance = document.getElementById('total-balance').innerText;
-    let totalIcomeBalance = parseFloat(previusIncomeBalance);
-    
+    const totalIcomeBalance = getInputValue('income-total');
 
     // Save Balance Field
-    let getSavingBalanceText = getInputValue('save-balance-field');
-    let totalSavingAmount    = totalIcomeBalance * getSavingBalanceText;
-    let currentSavingAmount  = totalSavingAmount / 100;
+    const getSavingBalanceText = getInputValue('save-balance-field');
+    const totalSavingAmount    = totalIcomeBalance * getSavingBalanceText;
+    const currentSavingAmount  = totalSavingAmount / 100;
 
     
 
     // //saving amount 
-    let  updateSavingAmount      = document.getElementById('saving-amount');
+    const updateSavingAmount     = document.getElementById('saving-amount');
     updateSavingAmount.innerText = currentSavingAmount;
 
-
+    const previusIncomeBalance = document.getElementById('total-balance').innerText;
+    
     // Remaining Balance
-    let updateRemaining = document.getElementById('remaining-balance');
+    const updateRemaining = document.getElementById('remaining-balance');
 
-    updateRemaining.innerText = totalIcomeBalance - currentSavingAmount;
-
+    updateRemaining.innerText = previusIncomeBalance - currentSavingAmount;
 });
